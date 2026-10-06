@@ -59,6 +59,9 @@ h2{font-family:var(--serif);font-size:22px;margin:0 0 14px}
 
 /* case */
 .hidden{display:none}
+.reveal{animation:rise .5s ease-out}
+@keyframes rise{from{opacity:.0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}}
 dl.info{display:grid;grid-template-columns:110px 1fr;gap:8px 16px;margin:0}
 dl.info dt{color:var(--muted);font-size:14px}
 dl.info dd{margin:0;font-weight:500}
@@ -307,9 +310,16 @@ footer p{margin:4px 0}
   const store = $("storeLink");
   if (STORE_URL) store.href = STORE_URL; else store.remove();
 
+  function reveal(el){
+    el.classList.remove("hidden");
+    el.classList.remove("reveal"); void el.offsetWidth; el.classList.add("reveal");
+  }
+  function openJudgment(scroll){
+    reveal($("judgment"));
+    if (scroll) $("judgment").scrollIntoView({behavior:"smooth", block:"start"});
+  }
   function openCase(scroll){
-    $("case").classList.remove("hidden");
-    $("judgment").classList.remove("hidden");
+    reveal($("case"));
     $("err").textContent = "";
     if (scroll) $("case").scrollIntoView({behavior:"smooth", block:"start"});
   }
@@ -329,11 +339,12 @@ footer p{margin:4px 0}
     input.value = ""; let i = 0;
     setTimeout(function type(){ input.value = CASE_NO.slice(0, ++i); if (i < CASE_NO.length) setTimeout(type, 90); else done(); }, 500);
   });
-  $("readBtn").addEventListener("click", (e) => { e.preventDefault(); $("judgment").scrollIntoView({behavior:"smooth"}); });
+  $("readBtn").addEventListener("click", (e) => { e.preventDefault(); openJudgment(true); try{history.replaceState(null,"","#judgment");}catch(_){} });
 
   // 링크로 바로 들어온 경우(#case, #judgment) 바로 열기
   if (location.hash === "#case" || location.hash === "#judgment") {
     openCase(false);
+    if (location.hash === "#judgment") openJudgment(false);
     setTimeout(() => document.querySelector(location.hash).scrollIntoView(), 50);
   }
 </script>
