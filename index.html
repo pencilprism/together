@@ -28,7 +28,7 @@ a{color:inherit}
 header{background:var(--paper);border-bottom:1px solid var(--line)}
 .head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.seal{width:40px;height:40px;border:2px solid #b3261e;color:#b3261e;border-radius:4px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:11px;line-height:1.1;text-align:center;transform:rotate(-4deg)}
+.logo{width:40px;height:40px;color:var(--ink);flex:none}
 .brand b{display:block;font-family:var(--serif);font-size:18px;letter-spacing:.02em}
 .brand small{display:block;color:var(--muted);font-size:12px;letter-spacing:.08em}
 .motto{font-family:var(--serif);font-size:12px;letter-spacing:.18em;color:var(--muted)}
@@ -101,9 +101,8 @@ dl.info dd{margin:0;font-weight:500}
 .paper .sign .who b{display:block}
 .paper .stamp{display:inline-block;margin-left:10px;width:58px;height:58px;border:2.5px solid #b3261e;color:#b3261e;border-radius:6px;font-size:11px;line-height:1.15;font-weight:700;vertical-align:middle;padding-top:9px;text-align:center;transform:rotate(-6deg);opacity:.85}
 
-.seal-img{display:none;width:44px;height:44px;object-fit:contain}
 .stamp-img{display:none;width:72px;height:72px;object-fit:contain;vertical-align:middle;margin-left:8px}
-.has-img+.seal-img,.has-img+.stamp-img{display:inline-block}
+.has-img+.stamp-img{display:inline-block}
 .has-img{display:none!important}
 footer{padding:28px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 footer p{margin:4px 0}
@@ -128,7 +127,7 @@ footer p{margin:4px 0}
 <header>
   <div class="wrap head">
     <a class="brand" href="./">
-      <span class="seal" aria-hidden="true">연필<br>법원</span><img class="seal-img" data-seal src="assets/seal-header.png" alt="" aria-hidden="true">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="7" r="2.2"/><path d="M24 9.2V40"/><path d="M8 13h32"/><path d="M15 43h18"/><path d="M19 40h10"/><path d="M12 13 6.5 27M12 13l5.5 14"/><path d="M5 27h14a7 7 0 0 1-14 0z"/><path d="M36 13l-5.5 14M36 13l5.5 14"/><path d="M29 27h14a7 7 0 0 1-14 0z"/></svg>
       <span><b>연필지방법원</b><small>독자참여재판부 · 판결서 열람실</small></span>
     </a>
     <span class="motto">FIAT JUSTITIA RUAT CAELUM</span>
@@ -297,7 +296,7 @@ footer p{margin:4px 0}
 </footer>
 
 <script>
-  // 직인 이미지: assets/seal-header.png, assets/seal-judgment.png 파일이 있으면 그 이미지로 바뀝니다.
+  // 직인 이미지: assets/seal-judgment.png 파일이 있으면 판결문 끝 직인이 그 이미지로 바뀝니다.
   document.querySelectorAll("img[data-seal]").forEach((img) => {
     const show = () => img.previousElementSibling.classList.add("has-img");
     if (img.complete && img.naturalWidth) show(); else img.addEventListener("load", show);
