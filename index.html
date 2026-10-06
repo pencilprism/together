@@ -54,6 +54,7 @@ h2{font-family:var(--serif);font-size:22px;margin:0 0 14px}
 .btn:hover{opacity:.88}
 .hint{margin-top:10px;font-size:14px;color:var(--ink-2)}
 .hint button{font:inherit;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;cursor:pointer}
+.hint-ok{margin-top:6px;font-size:14px;color:var(--gold);min-height:1.2em}
 .err{margin-top:10px;color:#b3261e;font-size:14px;min-height:1.2em}
 
 /* case */
@@ -148,7 +149,8 @@ footer p{margin:4px 0}
       <input id="caseNo" name="caseNo" placeholder="사건번호를 입력해 주세요" aria-label="사건번호">
       <button class="btn" type="submit">조회</button>
     </form>
-    <div class="hint">사건번호가 기억나지 않으시나요? <button type="button" id="fillBtn">2026독참107</button></div>
+    <div class="hint">사건번호가 기억나지 않으시나요? <button type="button" id="fillBtn">대박흥신소에 사건번호 조회 의뢰하기</button></div>
+    <div class="hint-ok" id="hintOk" aria-live="polite"></div>
     <div class="err" id="err" role="alert"></div>
   </section>
 
@@ -317,7 +319,16 @@ footer p{margin:4px 0}
     if (v === CASE_NO) { openCase(true); history.replaceState(null,"","#case"); }
     else { $("err").textContent = v ? "해당 사건을 찾을 수 없습니다. 사건번호를 다시 확인해 주세요." : "사건번호를 입력해 주세요."; }
   });
-  $("fillBtn").addEventListener("click", () => { $("caseNo").value = CASE_NO; $("caseNo").focus(); });
+  $("fillBtn").addEventListener("click", () => {
+    const input = $("caseNo"), ok = $("hintOk");
+    $("err").textContent = "";
+    ok.textContent = "대박흥신소에서 의뢰를 접수했습니다. 조회 중…";
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const done = () => { input.value = CASE_NO; input.focus(); ok.textContent = "의뢰 완료. 대박흥신소가 사건번호를 찾아 드렸습니다. ‘조회’를 눌러 주세요."; };
+    if (reduce) return done();
+    input.value = ""; let i = 0;
+    setTimeout(function type(){ input.value = CASE_NO.slice(0, ++i); if (i < CASE_NO.length) setTimeout(type, 90); else done(); }, 500);
+  });
   $("readBtn").addEventListener("click", (e) => { e.preventDefault(); $("judgment").scrollIntoView({behavior:"smooth"}); });
 
   // 링크로 바로 들어온 경우(#case, #judgment) 바로 열기
