@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>판결서 열람실 · 연필지방법원 독자참여재판부</title>
+<meta name="description" content="「너희들은 변호됐다」 1부 파기환송판 사건(2026독참107) 판결서 열람 — 도서출판 연필 이벤트 페이지">
+<meta property="og:title" content="2026독참107 판결서 열람실">
+<meta property="og:description" content="「너희들은 변호됐다」 1부 파기환송판 사건, 판결을 선고합니다.">
+<meta property="og:image" content="assets/cover.jpg">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b1b1b; --ink-2:#4a4a4a; --muted:#8a8a8a; --line:#d9d6cf;
+  --paper:#fbfaf7; --bg:#efede8; --accent:#1b1b1b; --gold:#a8873b;
+  --serif:"Noto Serif KR",serif; --sans:"Noto Sans KR",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--paper);border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.seal{width:40px;height:40px;border:2px solid #b3261e;color:#b3261e;border-radius:4px;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:11px;line-height:1.1;text-align:center;transform:rotate(-4deg)}
+.brand b{display:block;font-family:var(--serif);font-size:18px;letter-spacing:.02em}
+.brand small{display:block;color:var(--muted);font-size:12px;letter-spacing:.08em}
+.motto{font-family:var(--serif);font-size:12px;letter-spacing:.18em;color:var(--muted)}
+
+/* hero */
+.hero{position:relative;background:#e9e9e7;overflow:hidden}
+.hero img{display:block;width:100%;max-height:360px;object-fit:cover;object-position:center 40%}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:28px 20px 18px;background:linear-gradient(transparent,rgba(239,237,232,.96) 60%)}
+.hero h1{margin:0;font-family:var(--serif);font-size:clamp(22px,4.2vw,34px);font-weight:700;letter-spacing:-.01em}
+.hero p{margin:4px 0 0;color:var(--ink-2);font-size:14px}
+
+/* cards */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px;margin:24px 0}
+.step{font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:6px}
+h2{font-family:var(--serif);font-size:22px;margin:0 0 14px}
+
+/* search */
+.search{display:flex;gap:8px;flex-wrap:wrap}
+.search input{flex:1 1 220px;min-width:0;font:inherit;font-size:17px;padding:12px 14px;border:1px solid #bdb8ad;border-radius:4px;background:#fff;color:var(--ink)}
+.search input:focus{outline:2px solid var(--ink);outline-offset:1px}
+.btn{font:inherit;font-weight:700;font-size:15px;padding:12px 22px;border-radius:4px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.88}
+.hint{margin-top:10px;font-size:14px;color:var(--ink-2)}
+.hint button{font:inherit;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;cursor:pointer}
+.err{margin-top:10px;color:#b3261e;font-size:14px;min-height:1.2em}
+
+/* case */
+.hidden{display:none}
+dl.info{display:grid;grid-template-columns:110px 1fr;gap:8px 16px;margin:0}
+dl.info dt{color:var(--muted);font-size:14px}
+dl.info dd{margin:0;font-weight:500}
+.timeline{list-style:none;margin:20px 0 0;padding:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 20px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.timeline li.done::before{background:var(--ink)}
+.timeline time{display:block;font-size:13px;color:var(--muted)}
+.timeline b{font-weight:700}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+/* judgment paper */
+.paper{background:#fff;border:1px solid var(--line);box-shadow:0 1px 0 rgba(0,0,0,.04),0 12px 30px -18px rgba(0,0,0,.25);padding:56px clamp(20px,6vw,72px);font-family:var(--serif);font-size:16px;line-height:1.95;color:#111}
+.paper .court{text-align:center;font-weight:700;font-size:18px;letter-spacing:.45em;padding-left:.45em}
+.paper .court.sub{font-size:16.5px;margin-top:6px}
+.paper .title{text-align:center;font-weight:700;font-size:30px;letter-spacing:.6em;margin:6px 0 28px;padding-left:.6em}
+.paper table.meta{border-collapse:collapse;margin-bottom:18px}
+.paper table.meta th{text-align:justify;text-align-last:justify;width:6em;font-weight:400;padding:2px 24px 2px 0;vertical-align:top}
+.paper table.meta td{padding:2px 0}
+.paper hr{border:0;border-top:1px solid #222;margin:18px 0 26px}
+.paper h3{text-align:center;font-size:19px;letter-spacing:.8em;padding-left:.8em;margin:40px 0 18px}
+.paper h4{font-size:16.5px;margin:28px 0 8px}
+.paper h5{font-size:16px;margin:20px 0 6px}
+.paper p{margin:0 0 14px}
+.paper ol.order{margin:0;padding-left:1.4em}
+.paper ol.order li{margin-bottom:6px}
+.paper blockquote{margin:8px 0 12px;padding:2px 0 2px 16px;border-left:3px solid #c9c4b8;color:#333;font-size:15.5px}
+.paper figure{margin:16px 0 18px}
+.paper figure img{width:100%;height:auto;display:block;border:1px solid #eee}
+.paper figcaption{text-align:center;font-size:13px;color:#666;margin-top:6px;font-family:var(--sans)}
+.paper .colophon{display:grid;grid-template-columns:auto auto 1fr;gap:0 18px;margin:8px 0 16px 1em}
+.paper ul.plain{list-style:none;padding:0;margin:0 0 14px}
+.paper ul.plain li::before{content:"- "}
+.paper .sign{margin-top:36px;border-top:1px solid #222;padding-top:20px}
+.paper .sign .date{text-align:center;margin-bottom:22px}
+.paper .sign .who{text-align:right}
+.paper .sign .who b{display:block}
+.paper .stamp{display:inline-block;margin-left:10px;width:58px;height:58px;border:2.5px solid #b3261e;color:#b3261e;border-radius:6px;font-size:11px;line-height:1.15;font-weight:700;vertical-align:middle;padding-top:9px;text-align:center;transform:rotate(-6deg);opacity:.85}
+
+footer{padding:28px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+footer p{margin:4px 0}
+
+@media (max-width:560px){
+  .motto{display:none}
+  .card{padding:22px 18px}
+  dl.info{grid-template-columns:88px 1fr}
+  .paper{font-size:15px;padding:36px 18px}
+  .paper .title{font-size:26px}
+}
+@media print{
+  header,.hero,#lookup,#case,footer{display:none!important}
+  body{background:#fff}
+  .card{border:0;padding:0;margin:0}
+  .paper{box-shadow:none;border:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a class="brand" href="./">
+      <span class="seal" aria-hidden="true">연필<br>법원</span>
+      <span><b>연필지방법원</b><small>독자참여재판부 · 판결서 열람실</small></span>
+    </a>
+    <span class="motto">FIAT JUSTITIA RUAT CAELUM</span>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="assets/cover.jpg" alt="「너희들은 변호됐다」 1·2부 양장본 열두 권이 나란히 꽂힌 모습">
+  <div class="cap wrap">
+    <h1>판결서 열람실</h1>
+    <p>「너희들은 변호됐다」 독자참여재판의 판결서를 열람하고 내려받을 수 있습니다.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="card" id="lookup">
+    <div class="step">STEP 1</div>
+    <h2>사건 조회</h2>
+    <form class="search" id="searchForm" autocomplete="off">
+      <input id="caseNo" name="caseNo" placeholder="사건번호를 입력해 주세요" aria-label="사건번호">
+      <button class="btn" type="submit">조회</button>
+    </form>
+    <div class="hint">사건번호가 기억나지 않으시나요? <button type="button" id="fillBtn">2026독참107</button></div>
+    <div class="err" id="err" role="alert"></div>
+  </section>
+
+  <section class="card hidden" id="case">
+    <div class="step">STEP 2</div>
+    <h2>사건 정보</h2>
+    <dl class="info">
+      <dt>사건번호</dt><dd>2026독참107</dd>
+      <dt>사건명</dt><dd>「너희들은 변호됐다」 1부 파기환송판 사건</dd>
+      <dt>재판부</dt><dd>연필지방법원 독자참여재판부</dd>
+      <dt>배심원</dt><dd>2,368명</dd>
+      <dt>결과</dt><dd>2026. 10. 7. 판결선고</dd>
+    </dl>
+    <ol class="timeline">
+      <li class="done"><time>2026. 9. 28.</time><b>심리 개시</b> — 독자참여재판 공고, 평결 접수 시작</li>
+      <li class="done"><time>2026. 10. 4. 23:30</time><b>변론종결</b> — 배심원 2,368명 평결 접수 마감</li>
+      <li class="done"><time>2026. 10. 7.</time><b>판결선고</b></li>
+    </ol>
+    <div class="actions">
+      <a class="btn" href="#judgment" id="readBtn">판결서 열람</a>
+      <a class="btn ghost" href="assets/2026dokcham107.pdf" download="2026독참107_판결서.pdf">PDF 내려받기</a>
+    </div>
+  </section>
+
+  <section class="card hidden" id="judgment" style="padding:0;border:0;background:none">
+    <article class="paper">
+      <div class="court">연필지방법원</div>
+      <div class="court sub">독자참여재판부</div>
+      <div class="title">판결</div>
+      <table class="meta">
+        <tr><th>사건</th><td>2026독참107　「너희들은 변호됐다」 1부 파기환송판 사건</td></tr>
+        <tr><th>배심원</th><td>2,368명</td></tr>
+        <tr><th>심리기간</th><td>2026. 9. 28. ~ 2026. 10. 4.</td></tr>
+        <tr><th>판결선고</th><td>2026. 10. 7.</td></tr>
+      </table>
+      <hr>
+
+      <p>안녕하세요, 연필입니다.</p>
+      <p>9월 28일부터 10월 4일까지 열린 독자참여재판에 모두 2,368분께서 배심원으로 평결을 남겨 주셨습니다. 귀한 시간을 내어 참여해 주신 모든 분께 깊이 감사드립니다.</p>
+      <p>남겨 주신 이유와 조건은 하나하나 빠짐없이 읽었습니다. 심리를 시작하며 말씀드린 대로 배심원 여러분의 평결을 무겁게 받들어 판결을 내렸습니다. 그 책임은 연필이 지겠습니다.</p>
+
+      <h3>주문</h3>
+      <ol class="order">
+        <li>「너희들은 변호됐다」 1부(전7권) 2쇄를 1,000부 한정으로 발행한다.</li>
+        <li>굿즈는 포함하지 않으며, 할인 없이 정가로 판매한다.</li>
+        <li>1·2부 모두 현재 디자인의 양장본은 이번 예약판매를 끝으로 다시 제작하지 않는다.</li>
+        <li>1부 2쇄의 주문은 10월 8일(목) 오전 11시부터 11월 9일(월) 오전 11시까지 받는다.</li>
+        <li>1부 2쇄는 1인 1세트로 구매를 제한한다.</li>
+      </ol>
+
+      <h3>이유</h3>
+      <h4>1. 배심원 평결의 요지</h4>
+      <p>배심원 2,368분 가운데 89%가 재판(再版)에 찬성, 8%가 조건부 찬성, 2%가 반대 평결을 내려 주셨습니다.</p>
+      <figure>
+        <img src="assets/verdict-chart.jpg" alt="평결 결과 이중 원그래프. 1부 소장자 찬성 74%, 조건부 18%, 반대 8%. 1부 미소장자 찬성 96%, 조건부 4%, 반대 0.2%. 전체 찬성 89%, 조건부 8%, 반대 2%." loading="lazy">
+        <figcaption>안쪽 원은 1부를 먼저 소장해 주신 분들, 바깥 원은 1부를 아직 소장하지 않은 분들의 평결입니다.</figcaption>
+      </figure>
+      <p>1부를 아직 소장하지 않은 분들께서는 96%가 찬성해 주셨습니다. 1부를 먼저 소장해 주신 분들 가운데서도 74%가 찬성, 18%가 조건부 찬성으로 뜻을 모아 주셨습니다. 가장 많았던 말씀은 두 가지였습니다. 1부를 놓친 분들의 안타까운 사연, 그리고 양도 사기와 웃돈 거래를 막아 달라는 당부였습니다.</p>
+      <p>반대해 주신 분들의 말씀도 무겁게 새겨, 배심원 의견으로 이 판결에 함께 적습니다. 1부 소장자 가운데 반대는 8%였습니다. 한정판이라는 안내를 믿고 큰 마음을 내어 구매하셨다는 분이 계셨습니다. 2차 추가 판매 때 이미 한 번 양보해 주셨다는 분, 아직 2차 발송분을 받기도 전에 재판 소식을 먼저 들으셔서 서운하셨다는 분도 계셨습니다. 모두 저희가 드린 안내에서 비롯된 말씀이라 따로 변명을 덧붙이지 않겠습니다. 다시 한번 깊이 사과드립니다.</p>
+
+      <h4>2. 판단</h4>
+      <h5>가. 굿즈와 가격에 관하여</h5>
+      <p>굿즈는 1부 한정판과 먼저 함께해 주신 분들의 몫으로 남겨 두었습니다. 그래서 2쇄는 책만, 할인 없는 정가로 판매합니다. 수량은 1,000부로 정했으며, 현재 디자인의 양장본은 1부와 2부 모두 이번 예약판매가 마지막입니다.</p>
+
+      <h5>나. 초판과의 구분에 관하여</h5>
+      <p>1부를 먼저 소장해 주신 배심원 가운데에는 2쇄를 초판과 구분해 달라는 의견이 있었습니다.</p>
+      <blockquote>“살짝 첫 판매 양장본이랑 재판 양장본 디자인이라든지 사소한 차이를 주면 좋겠습니다! 가름끈 색을 다르게 한다든지”</blockquote>
+      <blockquote>“한정판의 의미가 있기에 약간의 차별성은 필요하지 않을까 생각됩니다.”</blockquote>
+      <p>가름끈 색을 달리하거나, 겉표지를 빼거나, 양장 대신 일반판으로 만들어 달라는 제안이었습니다. 한정판을 믿고 먼저 구매해 주신 마음을 지키려는 의견으로, 타당한 일면이 있습니다.</p>
+      <p>반면 초판과 똑같이 만들어 달라는 의견도 소장자분들 사이에서 함께 나왔습니다.</p>
+      <blockquote>“새로운 디자인이 나오면 구매하지 않을 수 없는데 1, 2부만으로도 저희 집은 포화 상태라서요…”</blockquote>
+      <blockquote>“기존 구매자들이 추가 구매하지 않아도 되게끔, 앞서 판매된 사양과 동일하되 굿즈만 제외된 버전으로 판매해 주셨으면 합니다.”</blockquote>
+      <p>초판과 다른 모습의 책이 나오면, 그 차이가 오히려 먼저 소장해 주신 분들께 또 하나의 부담이 될 수 있다는 말씀이었습니다. 이 역시 타당한 일면이 있습니다.</p>
+      <p>재판부는 두 의견을 모두 무겁게 살핀 뒤, 심리를 열며 처음 제시한 조건으로 돌아가 보았습니다. 조건은 ‘할인 없는 정가’와 ‘굿즈 없이 책만’, 두 가지였습니다. 1부를 먼저 소장해 주신 배심원의 74%(1부 미소장 배심원의 96%, 전체 배심원의 89%)가 이 조건에 그대로 찬성해 주셨습니다. 그래서 2쇄는 1부 한정판에서 책만 구매하셨던 분들이 받으신 책과 같은 사양으로 만들기로 하였습니다.</p>
+
+      <h5>다. 겉표지에 관하여</h5>
+      <p>겉표지를 빼 달라는 의견도 있었습니다. 반대로 1부를 놓친 배심원께서는 이렇게 말씀해 주셨습니다.</p>
+      <blockquote>“굿즈까지는 바라지 않겠습니다… 다만 시크릿 표지는 씌워주셨으면 좋겠습니다. 2부랑 같이 연결해서 놓고 싶어요.”</blockquote>
+      <p>독자분들께서 ‘시크릿 커버’라고 불러 주신 겉표지는 1부와 2부가 하나로 이어지는 그림으로, 굿즈가 아닌 책의 일부입니다. 1부 초판 때 책만 구매하신 분들께도 똑같이 드렸습니다.</p>
+      <p>그리고 재판부는 겉표지를 만들던 시간도 조금 참작했습니다. 이런 말씀을 판결문에 적어도 될까 싶어 몇 번을 지웠다 다시 씁니다. 편집부는 이 한 장을 위해 도안을 수십 차례 고치고, 모형을 만들고, 종이를 접고 풀칠하기를 거듭했습니다. 만든 사람이 제 손으로 고생을 이야기하는 것이 멋쩍고 민망합니다. 그래도 그렇게 만든 그림이 한 분께라도 더 닿았으면 하는 마음만은 감추기 어려웠습니다. 그래서 2쇄에도 겉표지를 함께 드립니다.</p>
+
+      <h5>라. 판권 표기와 이름에 관하여</h5>
+      <p>판권면에는 아래와 같이 남깁니다.</p>
+      <div class="colophon">
+        <span>펴낸날</span><span>초판</span><span>1쇄 2026년 7월 17일</span>
+        <span></span><span></span><span>2쇄 2026년 10월 28일</span>
+      </div>
+      <p>초판 1쇄를 먼저 품어 주신 분들의 책이 처음이라는 사실은 이렇게 기록으로 남습니다. 너른 마음으로 동의해 주셔서 감사합니다.</p>
+      <p>‘파기환송판’이라는 이름을 참 많은 분께서 아껴 주셨습니다. 책에도 이 이름을 새겨 주었으면 한다는 말씀이 있어 마지막까지 고민했습니다. 하지만 이 이름은 한정판이라는 약속을 스스로 거두는 죄송함을 담아 지은 이름입니다. 그 이름이 또 하나의 한정판이 되어, 재판을 연 뜻과 달리 누군가에게 새로운 부담이 되는 일은 없었으면 했습니다.</p>
+      <p>그래서 ‘파기환송판’은 책이 아닌, 2,368분의 배심원께서 함께 심리해 주신 이번 사건의 이름으로 남겨 두려 합니다.</p>
+
+      <h4>3. 결론</h4>
+      <p>그러므로 주문과 같이 판결한다.</p>
+
+      <h3>판매안내</h3>
+      <ul class="plain">
+        <li>1부 2쇄: 1~7권 종이책(겉표지 포함, 굿즈 미포함), 154,000원, 1,000부 한정</li>
+        <li>판매 기간: 10월 8일(목) 오전 11시 ~ 11월 9일(월) 오전 11시<br>　(1,000부가 모두 주문되면 기간 중이라도 판매가 마감됩니다.)</li>
+        <li>구매 제한: 1인 1세트</li>
+        <li>판매처: 공식 스토어에서만 판매합니다. <a id="storeLink" href="#" target="_blank" rel="noopener">공식 스토어 바로가기</a></li>
+      </ul>
+      <p>2부는 앞서 안내드린 대로 10월 25일(일)까지 판매합니다.</p>
+      <p style="margin-bottom:4px">발송은 주문하신 순서대로 진행됩니다.</p>
+      <ul class="plain">
+        <li>1부 2쇄: 12월 21일(월)부터 순차 발송</li>
+        <li>2부: 12월 21일(월)부터 순차 발송</li>
+      </ul>
+      <p>1부 2쇄와 2부를 함께 주문하시더라도 책의 무게 때문에 각각 따로 포장해 발송해 드리는 점 양해 부탁드립니다.</p>
+
+      <h3>덧붙이는 말</h3>
+      <p>판결문에는 마음을 길게 적지 않는다고 하지만, 이 말씀만은 꼭 덧붙이고 싶습니다.</p>
+      <p>재판을 열겠다고 말씀드린 날부터 선고를 준비하는 오늘까지, 저희에게도 쉬운 날은 없었습니다. 그 시간을 버틸 수 있었던 건 찬성과 반대를 가리지 않고 정성껏 남겨 주신 말씀 덕분이었습니다.</p>
+      <p>솔직히 이렇게 많은 사랑을 받게 될 줄은 몰랐습니다. 2,368분의 평결을 한 줄 한 줄 읽는 동안 몇 번이나 일손을 멈췄습니다.</p>
+      <blockquote>“죽을 때까지 책을 짝사랑할 줄 알았는데 여러분 덕분에 맞사랑이 되네요.”</blockquote>
+      <blockquote>“1부를 받아 보고서 만듦새에서부터 연필에서 얼마나 고생하셨는지가 느껴져서 정말 감사한 마음이 들었습니다.”</blockquote>
+      <blockquote>“출판사가 어느 방향인지 몰라서 12방위로 절을 올렸습니다.”</blockquote>
+      <blockquote>“당신들이 진심이라 독자는 행복해요.”</blockquote>
+      <p>1부를 이미 소장하신 한 배심원께서는 이런 말씀도 남겨 주셨습니다.</p>
+      <blockquote>“1부 책을 보면서 굉장히 정성을 많이 느꼈기 때문에, 이런 감동을 새로 구매하시는 분들도 느꼈으면 합니다.”</blockquote>
+      <p>찬성도 반대도 결국 모두 이 작품을 아끼는 마음에서 나왔다는 것을 이번 재판을 통해 알게 되었습니다. 보내 주신 지지와 응원은 저희가 감히 기대하지 못한 것이었습니다. 진심으로 감사드립니다.</p>
+      <p>작가님께 전해 달라고 남겨 주신 말씀은 소중히 모아 백산 작가님께 전해 드렸습니다.</p>
+      <p>이상으로 선고를 마칩니다. 함께 재판해 주신 모든 배심원께 다시 한번 감사드립니다.</p>
+
+      <div class="sign">
+        <div class="date">2026. 10. 7.</div>
+        <div class="who"><b>연필지방법원 독자참여재판부 <span class="stamp" aria-hidden="true">연필<br>재판부<br>지인</span></b>연필 드림</div>
+      </div>
+    </article>
+    <div class="actions" style="justify-content:center;margin:20px 0 4px">
+      <a class="btn" href="assets/2026dokcham107.pdf" download="2026독참107_판결서.pdf">판결서 PDF 내려받기</a>
+      <button class="btn ghost" type="button" onclick="window.print()">인쇄하기</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>이 페이지는 도서출판 연필이 「너희들은 변호됐다」 독자참여재판을 위해 만든 이벤트 페이지이며, 실제 법원·국가기관과 관련이 없습니다.</p>
+  <p>연필은 DM이나 개인 계좌로 판매하지 않습니다.</p>
+  <p>© 펜슬프리즘(주) 연필</p>
+</footer>
+
+<script>
+  // 공식 스토어 주소를 여기에 넣어 주세요.
+  const STORE_URL = "";
+  const CASE_NO = "2026독참107";
+
+  const $ = (id) => document.getElementById(id);
+  const store = $("storeLink");
+  if (STORE_URL) store.href = STORE_URL; else store.remove();
+
+  function openCase(scroll){
+    $("case").classList.remove("hidden");
+    $("judgment").classList.remove("hidden");
+    $("err").textContent = "";
+    if (scroll) $("case").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+  $("searchForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const v = $("caseNo").value.replace(/\s+/g,"").replace(/호$/,"");
+    if (v === CASE_NO) { openCase(true); history.replaceState(null,"","#case"); }
+    else { $("err").textContent = v ? "해당 사건을 찾을 수 없습니다. 사건번호를 다시 확인해 주세요." : "사건번호를 입력해 주세요."; }
+  });
+  $("fillBtn").addEventListener("click", () => { $("caseNo").value = CASE_NO; $("caseNo").focus(); });
+  $("readBtn").addEventListener("click", (e) => { e.preventDefault(); $("judgment").scrollIntoView({behavior:"smooth"}); });
+
+  // 링크로 바로 들어온 경우(#case, #judgment) 바로 열기
+  if (location.hash === "#case" || location.hash === "#judgment") {
+    openCase(false);
+    setTimeout(() => document.querySelector(location.hash).scrollIntoView(), 50);
+  }
+</script>
+</body>
+</html>
